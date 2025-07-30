@@ -34,20 +34,6 @@ const Projects = () => {
       category: "Full Stack"
     },
     {
-      title: "Admin Dashboard",
-      description: "Modern administrative dashboard with comprehensive data visualization, user management, and analytics. Built with React.js and featuring interactive charts and real-time updates.",
-      features: [
-        "Data Visualization",
-        "User Management System",
-        "Interactive Charts",
-        "Real-time Updates"
-      ],
-      technologies: ["React.js", "Node.js", "MongoDB", "Chart.js", "Express"],
-      icon: <BarChart3 className="h-8 w-8" />,
-      gradient: "bg-primary",
-      category: "Full Stack"
-    },
-    {
       title: "Caffeinehub Website",
       description: "Modern full-stack coffee shop website with complete e-commerce functionality, real-time order processing, secure user authentication, and containerized deployment.",
       features: [
@@ -58,7 +44,7 @@ const Projects = () => {
       ],
       technologies: ["React.js", "MySQL", "REST APIs", "Docker", "Git"],
       icon: <Coffee className="h-8 w-8" />,
-      gradient: "bg-gradient-primary",
+      gradient: "bg-primary",
       category: "E-commerce"
     }
   ];
