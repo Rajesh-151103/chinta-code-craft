@@ -92,7 +92,7 @@ const Skills = () => {
           {/* Stats Section */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 animate-fade-in" style={{ animationDelay: '0.6s' }}>
             {[
-              { number: "3+", label: "Years Learning" },
+              { number: "Fresh", label: "Graduate" },
               { number: "10+", label: "Technologies" },
               { number: "5+", label: "Projects" },
               { number: "100%", label: "Dedication" }
