@@ -4,43 +4,56 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Download, Mail, Code, Database, Globe, Star } from "lucide-react";
 // Profile image URL
 const profileImageUrl = "https://i.postimg.cc/1t6szMrq/photo-2025-07-30-17-40-11.jpg";
-
 const Hero = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
-  const techStack = [
-    { name: "React.js", icon: <Code className="h-4 w-4" /> },
-    { name: "Spring Boot", icon: <Globe className="h-4 w-4" /> },
-    { name: "PostgreSQL", icon: <Database className="h-4 w-4" /> },
-    { name: "Python", icon: <Code className="h-4 w-4" /> },
-  ];
-
-  const achievements = [
-    { label: "Projects Completed", value: "5+" },
-    { label: "Technologies Mastered", value: "10+" },
-    { label: "Code Quality", value: "90%" }
-  ];
-
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-background relative overflow-hidden">
+  const techStack = [{
+    name: "React.js",
+    icon: <Code className="h-4 w-4" />
+  }, {
+    name: "Spring Boot",
+    icon: <Globe className="h-4 w-4" />
+  }, {
+    name: "PostgreSQL",
+    icon: <Database className="h-4 w-4" />
+  }, {
+    name: "Python",
+    icon: <Code className="h-4 w-4" />
+  }];
+  const achievements = [{
+    label: "Projects Completed",
+    value: "5+"
+  }, {
+    label: "Technologies Mastered",
+    value: "10+"
+  }, {
+    label: "Code Quality",
+    value: "90%"
+  }];
+  return <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-background relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
         {/* Floating geometric shapes */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-accent/20 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-5 w-16 h-16 bg-accent/30 rounded-full blur-lg animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-pulse" style={{
+        animationDelay: '1s'
+      }}></div>
+        <div className="absolute top-1/2 left-5 w-16 h-16 bg-accent/30 rounded-full blur-lg animate-pulse" style={{
+        animationDelay: '2s'
+      }}></div>
         
         {/* Modern grid pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="grid grid-cols-12 gap-4 h-full w-full p-8">
-            {Array.from({ length: 48 }).map((_, i) => (
-              <div key={i} className="border border-white/20 rounded"></div>
-            ))}
+            {Array.from({
+            length: 48
+          }).map((_, i) => <div key={i} className="border border-white/20 rounded"></div>)}
           </div>
         </div>
       </div>
@@ -67,27 +80,17 @@ const Hero = () => {
                 <h2 className="text-3xl lg:text-4xl text-white/90 font-semibold">
                   Full Stack Developer
                 </h2>
-                <p className="text-xl text-white/80 leading-relaxed max-w-lg">
-                  Building scalable and impactful web solutions with precision and passion. 
-                  Fresh graduate ready to make a difference in the tech world.
-                </p>
+                <p className="text-xl text-white/80 leading-relaxed max-w-lg">Passionate Full Stack Developer skilled in React.js, Node.js, MySQL, and Java (Spring Boot, Servlets, JDBC). Experienced in RESTful APIs, Git, and Docker, aiming to build scalable and innovative software solutions.</p>
               </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                variant="hero" 
-                onClick={() => scrollToSection('#projects')}
-                className="group relative overflow-hidden"
-              >
+              <Button variant="hero" onClick={() => scrollToSection('#projects')} className="group relative overflow-hidden">
                 <span className="relative z-10">View My Work</span>
                 <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform relative z-10" />
               </Button>
-              <Button 
-                variant="outline" 
-                className="text-white border-white/30 bg-white/10 backdrop-blur-md hover:bg-white hover:text-primary transition-all duration-300"
-              >
+              <Button variant="outline" className="text-white border-white/30 bg-white/10 backdrop-blur-md hover:bg-white hover:text-primary transition-all duration-300">
                 <Download className="mr-2 h-5 w-5" />
                 Download CV
               </Button>
@@ -95,34 +98,29 @@ const Hero = () => {
 
             {/* Tech Stack Pills */}
             <div className="flex flex-wrap gap-3 pt-4">
-              {techStack.map((tech, index) => (
-                <Badge 
-                  key={index}
-                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all duration-300 px-4 py-2"
-                >
+              {techStack.map((tech, index) => <Badge key={index} className="bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all duration-300 px-4 py-2">
                   {tech.icon}
                   <span className="ml-2">{tech.name}</span>
-                </Badge>
-              ))}
+                </Badge>)}
             </div>
 
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-6 pt-6">
-              {achievements.map((achievement, index) => (
-                <div key={index} className="text-center">
+              {achievements.map((achievement, index) => <div key={index} className="text-center">
                   <div className="text-2xl lg:text-3xl font-bold text-accent mb-1">
                     {achievement.value}
                   </div>
                   <div className="text-white/70 text-sm">
                     {achievement.label}
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
 
           {/* Right Content - Enhanced Profile Section */}
-          <div className="flex justify-center lg:justify-end animate-scale-in" style={{ animationDelay: '0.3s' }}>
+          <div className="flex justify-center lg:justify-end animate-scale-in" style={{
+          animationDelay: '0.3s'
+        }}>
             <div className="relative">
               {/* Main Profile Card */}
               <Card className="bg-white/10 backdrop-blur-lg border border-white/20 shadow-glow overflow-hidden">
@@ -130,11 +128,7 @@ const Hero = () => {
                   <div className="relative">
                     {/* Profile Image */}
                     <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden mb-6">
-                      <img
-                        src={profileImageUrl}
-                        alt="Chinta Rajesh - Full Stack Developer"
-                        className="w-full h-full object-cover"
-                      />
+                      <img src={profileImageUrl} alt="Chinta Rajesh - Full Stack Developer" className="w-full h-full object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
                     </div>
                     
@@ -145,12 +139,7 @@ const Hero = () => {
                       
                       {/* Quick Contact */}
                       <div className="flex justify-center gap-3">
-                        <Button 
-                          variant="ghost" 
-                          size="icon" 
-                          className="text-white hover:text-accent hover:bg-white/10 transition-all duration-300"
-                          onClick={() => scrollToSection('#contact')}
-                        >
+                        <Button variant="ghost" size="icon" className="text-white hover:text-accent hover:bg-white/10 transition-all duration-300" onClick={() => scrollToSection('#contact')}>
                           <Mail className="h-5 w-5" />
                         </Button>
                       </div>
@@ -164,11 +153,15 @@ const Hero = () => {
                 <Star className="h-4 w-4" />
                 React.js
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-gradient-primary text-white px-4 py-2 rounded-full font-semibold shadow-lg animate-pulse flex items-center gap-2" style={{ animationDelay: '1s' }}>
+              <div className="absolute -bottom-6 -left-6 bg-gradient-primary text-white px-4 py-2 rounded-full font-semibold shadow-lg animate-pulse flex items-center gap-2" style={{
+              animationDelay: '1s'
+            }}>
                 <Database className="h-4 w-4" />
                 Spring Boot
               </div>
-              <div className="absolute top-1/2 -left-8 bg-white/20 backdrop-blur-md text-white px-3 py-2 rounded-full font-medium shadow-lg animate-pulse flex items-center gap-2" style={{ animationDelay: '1.5s' }}>
+              <div className="absolute top-1/2 -left-8 bg-white/20 backdrop-blur-md text-white px-3 py-2 rounded-full font-medium shadow-lg animate-pulse flex items-center gap-2" style={{
+              animationDelay: '1.5s'
+            }}>
                 <Globe className="h-4 w-4" />
                 Fresh Graduate
               </div>
@@ -186,8 +179,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
