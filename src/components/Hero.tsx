@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Download, Mail, Code, Database, Globe, Star } from "lucide-react";
-import profileImage from "@/assets/rajesh-profile.jpg";
+// Profile image URL
+const profileImageUrl = "https://i.postimg.cc/1t6szMrq/photo-2025-07-30-17-40-11.jpg";
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -14,7 +15,7 @@ const Hero = () => {
 
   const techStack = [
     { name: "React.js", icon: <Code className="h-4 w-4" /> },
-    { name: "Node.js", icon: <Globe className="h-4 w-4" /> },
+    { name: "Spring Boot", icon: <Globe className="h-4 w-4" /> },
     { name: "PostgreSQL", icon: <Database className="h-4 w-4" /> },
     { name: "Python", icon: <Code className="h-4 w-4" /> },
   ];
@@ -130,7 +131,7 @@ const Hero = () => {
                     {/* Profile Image */}
                     <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden mb-6">
                       <img
-                        src={profileImage}
+                        src={profileImageUrl}
                         alt="Chinta Rajesh - Full Stack Developer"
                         className="w-full h-full object-cover"
                       />
@@ -165,7 +166,7 @@ const Hero = () => {
               </div>
               <div className="absolute -bottom-6 -left-6 bg-gradient-primary text-white px-4 py-2 rounded-full font-semibold shadow-lg animate-pulse flex items-center gap-2" style={{ animationDelay: '1s' }}>
                 <Database className="h-4 w-4" />
-                Node.js
+                Spring Boot
               </div>
               <div className="absolute top-1/2 -left-8 bg-white/20 backdrop-blur-md text-white px-3 py-2 rounded-full font-medium shadow-lg animate-pulse flex items-center gap-2" style={{ animationDelay: '1.5s' }}>
                 <Globe className="h-4 w-4" />
