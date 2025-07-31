@@ -23,7 +23,7 @@ const Hero = () => {
     name: "PostgreSQL",
     icon: <Database className="h-4 w-4" />
   }, {
-    name: "Java",
+    name: "Python",
     icon: <Code className="h-4 w-4" />
   }];
   const achievements = [{
