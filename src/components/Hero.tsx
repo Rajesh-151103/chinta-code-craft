@@ -37,25 +37,30 @@ const Hero = () => {
     value: "90%"
   }];
   return <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-background relative overflow-hidden">
-      {/* Enhanced Background Elements */}
+      {/* Dynamic Background Elements */}
       <div className="absolute inset-0">
-        {/* Floating geometric shapes */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-accent/20 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-pulse" style={{
-        animationDelay: '1s'
-      }}></div>
-        <div className="absolute top-1/2 left-5 w-16 h-16 bg-accent/30 rounded-full blur-lg animate-pulse" style={{
-        animationDelay: '2s'
-      }}></div>
+        {/* Animated floating orbs */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-accent/30 rounded-full blur-xl animate-[float_6s_ease-in-out_infinite]"></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-primary/30 rounded-full blur-xl animate-[float_8s_ease-in-out_infinite_reverse]"></div>
+        <div className="absolute top-1/2 left-5 w-16 h-16 bg-accent/40 rounded-full blur-lg animate-[float_4s_ease-in-out_infinite]"></div>
+        <div className="absolute top-10 right-1/4 w-24 h-24 bg-primary/20 rounded-full blur-2xl animate-[float_7s_ease-in-out_infinite]"></div>
         
-        {/* Modern grid pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="grid grid-cols-12 gap-4 h-full w-full p-8">
-            {Array.from({
-            length: 48
-          }).map((_, i) => <div key={i} className="border border-white/20 rounded"></div>)}
-          </div>
-        </div>
+        {/* Gradient lines */}
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/10 to-transparent animate-pulse"></div>
+        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-accent/20 to-transparent animate-pulse" style={{ animationDelay: '1s' }}></div>
+        
+        {/* Moving particles */}
+        {Array.from({ length: 20 }).map((_, i) => (
+          <div 
+            key={i} 
+            className="absolute w-1 h-1 bg-white/30 rounded-full animate-[twinkle_3s_ease-in-out_infinite]"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`
+            }}
+          ></div>
+        ))}
       </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">

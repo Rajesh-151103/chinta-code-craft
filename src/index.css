@@ -44,6 +44,10 @@ All colors MUST be HSL.
     --shadow-card: 0 10px 30px hsl(240 15% 15% / 0.1);
 
     --radius: 0.5rem;
+    
+    /* Dynamic animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 

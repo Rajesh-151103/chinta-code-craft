@@ -73,15 +73,37 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 bg-background relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 left-10 w-96 h-96 bg-primary rounded-full blur-3xl animate-[float_12s_ease-in-out_infinite]"></div>
+        <div className="absolute bottom-10 right-10 w-72 h-72 bg-accent rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite_reverse]"></div>
+        
+        {/* Moving constellation effect */}
+        {Array.from({ length: 15 }).map((_, i) => (
+          <div 
+            key={i} 
+            className="absolute w-1 h-1 bg-primary/30 rounded-full animate-[twinkle_2s_ease-in-out_infinite]"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 2}s`
+            }}
+          ></div>
+        ))}
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Get In <span className="text-primary">Touch</span>
+            <div className="inline-block bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-full px-6 py-2 mb-6 animate-[glow_2s_ease-in-out_infinite_alternate]">
+              <span className="text-primary font-semibold">Contact Me</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4 animate-[slideUp_0.8s_ease-out]">
+              Get In <span className="bg-gradient-primary bg-clip-text text-transparent animate-[shimmer_3s_ease-in-out_infinite]">Touch</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-[slideUp_0.8s_ease-out_0.2s_both]">
               Let's discuss your next project and bring your ideas to life
             </p>
           </div>
@@ -100,28 +122,35 @@ const Contact = () => {
 
               <div className="grid gap-4">
                 {contactInfo.map((info, index) => (
-                  <Card 
+                <Card 
                     key={index}
-                    className="shadow-card hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-0"
+                    className="group shadow-card hover:shadow-glow transition-all duration-500 transform hover:-translate-y-2 hover:scale-[1.02] border-0 bg-card/50 backdrop-blur-sm animate-[slideIn_0.6s_ease-out]"
+                    style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <CardContent className="p-6">
+                    <CardContent className="p-6 relative overflow-hidden">
+                      {/* Animated background effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      
                       <a 
                         href={info.href}
                         target={info.href.startsWith('http') ? '_blank' : undefined}
                         rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="flex items-center gap-4 group"
+                        className="flex items-center gap-4 group relative z-10"
                       >
-                        <div className={`p-3 rounded-xl text-white ${info.gradient} group-hover:scale-110 transition-transform`}>
+                        <div className={`p-3 rounded-xl text-white ${info.gradient} group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg`}>
                           {info.icon}
                         </div>
                         <div>
-                          <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                          <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
                             {info.label}
                           </h4>
-                          <p className="text-muted-foreground">
+                          <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                             {info.value}
                           </p>
                         </div>
+                        
+                        {/* Floating indicator */}
+                        <div className="absolute top-2 right-2 w-2 h-2 bg-primary/30 rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </a>
                     </CardContent>
                   </Card>

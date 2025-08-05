@@ -25,10 +25,25 @@ const About = () => {
 
   return (
     <section id="about" className="py-20 bg-gradient-subtle relative overflow-hidden">
-      {/* Background Elements */}
+      {/* Dynamic Background Elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite]"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite_reverse]"></div>
+        <div className="absolute top-1/2 right-1/4 w-48 h-48 bg-primary/60 rounded-full blur-2xl animate-[float_6s_ease-in-out_infinite]"></div>
+      </div>
+      
+      {/* Animated grid lines */}
+      <div className="absolute inset-0 opacity-5">
+        {Array.from({ length: 10 }).map((_, i) => (
+          <div 
+            key={i} 
+            className="absolute h-px w-full bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-[sweep_4s_ease-in-out_infinite]"
+            style={{ 
+              top: `${10 + i * 10}%`,
+              animationDelay: `${i * 0.5}s`
+            }}
+          ></div>
+        ))}
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
